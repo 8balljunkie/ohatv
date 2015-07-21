@@ -1,10 +1,28 @@
 # ohatv (Beta)
-A Webapplication to find and index Tv Shows.
+A lightweight Webapplication to find and index Tv Shows and downloading them using getstrike and btdigg.
+This application has the same functions as Sickrage but with better Torrent support.
+This is not to be used for findig legacy shows, but you could still use the rename function.
 
-# disclaimer
+## Disclaimer
 The application is in Beta, and I will not be responsible for any actions regarding the usage.
 
-#Installation Windows
+## Features
+Finding show info and meta on thetvdb
+Select episodes wanted for download.
+Download using Transmission or Blackhole method.
+Automatically rename and move files to the desired folder using the standard by Kodi: Showname(folder) -> Season x(folder) -> episode(file).
+Manually rename and process files.
+Notifications on the dashboard.
+
+##Upcomming Features
+File directory list viewer in the settings.
+Support for non conventional naming like 410 instead of S04E10.
+Renaming files set by the user.
+Adding support for other bitTorrent clients.
+Support for Movies
+
+
+##Installation Windows
 Make sure Java is installed, check by command line with "java -version" you will need 1.7.0 or higher!
 
 1. Download and extract the zip file from the Beta folder.
@@ -13,7 +31,7 @@ Make sure Java is installed, check by command line with "java -version" you will
 4. Jetty runner needs a while before it will show in the browser.
 5. go to http://localhost:port
 
-#Installation Mac/Linux
+##Installation Mac/Linux
 Make sure Java is installed, Terminal command to check is "java -version" you will need 1.7.0 or higher!
 I have tested this with OracleJDK and not OpenJDK but feel free to test.
 
