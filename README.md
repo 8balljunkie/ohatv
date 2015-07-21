@@ -19,6 +19,7 @@ The application is in Beta, and I will not be responsible for any actions regard
 ##Upcomming Features
 - File directory list viewer in the settings.
 - Support for non conventional naming like 410 instead of S04E10.
+- Support for combination episodes.
 - Renaming files set by the user.
 - Adding support for other bitTorrent clients.
 - Support for Movies
