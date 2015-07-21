@@ -3,6 +3,8 @@ A lightweight Webapplication with responsive design to index Tv Shows and downlo
 This application has the same functions as Sickrage but with better Torrent support and no NZB support.
 This is not to be used for findig legacy shows, but you could still use the rename function.
 
+Screenshots: http://imgur.com/gallery/eafeI/new
+
 ## Disclaimer
 The application is in Beta, and I will not be responsible for any actions regarding the usage.
 
