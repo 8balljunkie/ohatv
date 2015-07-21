@@ -7,19 +7,19 @@ This is not to be used for findig legacy shows, but you could still use the rena
 The application is in Beta, and I will not be responsible for any actions regarding the usage.
 
 ## Features
-..*Finding show info and meta on thetvdb
-..*Select episodes wanted for download.
-..*Download using Transmission or Blackhole method.
-..*Automatically rename and move files to the desired folder using the standard by Kodi: Showname(folder) -> Season x(folder) -> episode(file).
-..*Manually rename and process files.
-..*Notifications on the dashboard.
+- Finding show info and meta on thetvdb
+- Select episodes wanted for download.
+- Download using Transmission or Blackhole method.
+- Automatically rename and move files to the desired folder using the standard by Kodi: Showname(folder) -> Season x(folder) -> episode(file).
+- Manually rename and process files.
+- Notifications on the dashboard.
 
 ##Upcomming Features
-..*File directory list viewer in the settings.
-..*Support for non conventional naming like 410 instead of S04E10.
-..*Renaming files set by the user.
-..*Adding support for other bitTorrent clients.
-..*Support for Movies
+- File directory list viewer in the settings.
+- Support for non conventional naming like 410 instead of S04E10.
+- Renaming files set by the user.
+- Adding support for other bitTorrent clients.
+- Support for Movies
 
 
 ##Installation Windows
