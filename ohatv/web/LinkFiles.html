@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OhaTV</title>
+    
+	<!-- Bootstrap Styles-->
+       <!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/tv2.png" />
+</head>
+<body onload="docloaded()">
+	<script src="js/LinkFiles.js"></script>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">OhaTV</a>
+            </div>
+
+            <ul class="nav navbar-top-links navbar-right">              
+                <!-- /.dropdown Notifications
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts" style="width: 350px">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-download fa-fw"></i> Game of Thrones - S01 E01
+                                    <span class="pull-right text-muted small">01/01/2015</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-magnet fa-fw"></i> Game of Thrones - S01 E02
+                                    <span class="pull-right text-muted small">today</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts 
+                </li>-->
+                <!-- /.dropdown
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Restart</a></li>
+                    </ul>
+                    <!-- /.dropdown-user
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <a href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+                    </li>
+                    <li>
+                        <a class="active-menu" href="ShowList.html"><i class="fa fa-fw fa-desktop"></i> Shows</a>
+                    </li>
+                    <li>
+                        <a href="Settings.html"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" >
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 id="showtitle" class="page-header">
+                            Link File
+                        </h1>
+                    </div>
+                </div>
+				<div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">                 
+                            <div class="panel-body">
+                                <button class="btn btn-success" onclick="linkfile()"><i class=" fa fa-star "></i> Link</button>
+                                <!--
+                                <a href="#" class="btn btn-success" style="width:120px" onclick="markEpisodeStatus(1);">Mark Wanted</a>
+                                <a href="#" class="btn btn-info" style="width:120px" onclick="markEpisodeStatus(0);">Mark ignore</a>
+                                <a href="#" class="btn btn-danger" style="width:120px" onclick="removeShow();">Remove</a>
+                                <a href="#" class="btn btn-danger" style="width:80px">Remove</a>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+            <div class="row">
+             	<div class="col-md-6">
+                     <!--   Basic Table  -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Files
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Filename</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="listfiles">
+                                       <!-- <tr>
+                                            <td><input type="radio" name="group1" /></td>
+                                            <td>lalalala.mp4</td>
+                                        </tr>
+                                        <tr>
+                                           <td><input type="radio" name="group1" /></td>
+                                            <td>lalalala.mp4</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="group1" /></td>
+                                            <td>lalalala.mp4</td>
+                                        </tr>-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			    <div class="col-md-6">
+					<div class="panel panel-default">
+                        <div id="Seasons" class="panel-heading">
+                            Seasons: 
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Showname</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="Episodelist">
+                                     <!--  <tr>
+                                            <td><input type="radio" name="group2" /></td>
+                                            <td>GOT dsqdsqdsqdsqdqsdsqdds - S01E01 - sqdsqdsqdsqdsqdsqdqsdsq</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="radio" name="group2" /></td>
+                                            <td>GOT - S01E01</td>
+                                        </tr>
+                                        <tr>
+                                           <td><input type="radio" name="group2" /></td>
+                                           <td>GOT - S01E01</td>
+                                        </tr>-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                      <!-- End  Basic Table  -->
+				 </div>         
+			 </div> 
+                 <!-- /. ROW  -->
+                <footer>
+                    <p>Show info by <a href="http://thetvdb.com">TheTVDB</a> Providers: <a href="http://showrss.info/">ShowRSS,</a> 
+                         <a href="https://getstrike.net">Strike,</a> <a href="http://btdigg.org">BTDigg</a> Created by the8balljunkie</p>
+                </footer>
+             <!-- /. PAGE INNER  -->
+            </div>
+         <!-- /. PAGE WRAPPER  -->
+        </div>
+     <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+      <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+     <!-- Custom Js 
+    <script src="assets/js/custom-scripts.js"></script>-->
+    
+   
+</body>
+</html>

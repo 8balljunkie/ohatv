@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OhaTV</title>
+    <!-- Bootstrap Styles-->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/tv2.png" />
+</head> 
+<body onload="docloaded()">
+    <script src="js/Notifications.js"></script>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">OhaTV</a>
+            </div>
+
+            <ul class="nav navbar-top-links navbar-right">              
+                <!-- /.dropdown Notifications
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts" style="width: 350px">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-download fa-fw"></i> Game of Thrones - S01 E01
+                                    <span class="pull-right text-muted small">01/01/2015</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-magnet fa-fw"></i> Game of Thrones - S01 E02
+                                    <span class="pull-right text-muted small">today</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li> -->
+                <!-- /.dropdown
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="Settings.html"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Restart</a></li>
+                    </ul>
+                    <!-- /.dropdown-user
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <a  href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+                    </li>
+                    <li>
+                        <a href="ShowList.html"><i class="fa fa-fw fa-desktop"></i> Shows</a>
+                    </li>
+                    <li>
+                        <a href="Settings.html"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header">
+                            Notification log
+                        </h1>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">                 
+                            <div class="panel-body"> 
+                                <button class="btn btn-danger" onclick="clearlog()"><i class="fa fa-trash-o"></i> Clear log</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- /. ROW  -->
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div id="listnotifications" class="list-group">
+                                    <!--
+									<a href="#" class="list-group-item">
+                                        <span class="badge">Today 12:15</span>
+                                        <i class="fa fa-fw fa-files-o"></i> Game Of Thrones - S01 E01
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge">Today 12:00</span>
+                                        <i class="fa fa-fw fa-download"></i> Game Of Thrones - S01 E01
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge">Today 11:45</span>
+                                        <i class="fa fa-fw fa-magnet"></i> Game Of Thrones - S01 E01
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge">36 minutes ago</span>
+                                        <i class="fa fa-fw fa-globe"></i> Invoice 653 has paid
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge">1 hour ago</span>
+                                        <i class="fa fa-fw fa-user"></i> A new user has been added
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge">1.23 hour ago</span>
+                                        <i class="fa fa-fw fa-user"></i> A new user has added
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge">yesterday</span>
+                                        <i class="fa fa-fw fa-globe"></i> Saved the world
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge">yesterday</span>
+                                        <i class="fa fa-fw fa-globe"></i> Saved the world
+                                    </a>
+									-->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+                <footer>
+                    <p>Show info by <a href="http://thetvdb.com">TheTVDB</a> Providers: <a href="http://showrss.info/">ShowRSS,</a> 
+                         <a href="https://getstrike.net">Strike,</a> <a href="http://btdigg.org">BTDigg</a> Created by the8balljunkie</p>
+                </footer>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- Morris Chart Js
+    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
+    <!--<script src="assets/js/morris/morris.js"></script>
+     Custom Js -->
+     <!-- Custom Js 
+    <script src="assets/js/custom-scripts.js"></script>-->
+
+
+</body>
+
+</html>
