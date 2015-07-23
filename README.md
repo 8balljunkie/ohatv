@@ -17,6 +17,7 @@ The application is in Beta, and I will not be responsible for any actions regard
 - Notifications on the dashboard.
 
 ##Upcomming Features
+- add support for scene tags
 - File directory list viewer in the settings.
 - Support for non conventional naming like 410 instead of S04E10.
 - Support for combination episodes.
