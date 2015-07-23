@@ -34,7 +34,7 @@ Make sure Java is installed, check by command line with "java -version" you will
 3. Start with run.bat
 4. Jetty runner needs a while before it will show in the browser.
 5. go to http://localhost:port
-6. Set the settings first. You will have to type the directories, make sure checked permissions.
+6. Set the settings first.
 
 ##Installation Mac/Linux
 Make sure Java is installed, Terminal command to check is "java -version" you will need 1.7.0 or higher!
@@ -45,4 +45,4 @@ I have tested this with OracleJDK and not OpenJDK but feel free to test.
 3. run the app with the following command (notice you can change the --port if you want a different one): "java -jar jetty-runner-9.2.10.v20150310.jar --port 9090 --log log --out out ohatv.war"
 4. Jetty runner needs a while before it will show in the browser.
 5. go to http://localhost:port
-6. Set the settings first. You will have to type the directories, make sure checked permissions.
+6. Set the settings first.
