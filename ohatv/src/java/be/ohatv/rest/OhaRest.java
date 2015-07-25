@@ -41,7 +41,7 @@ public class OhaRest {
     @Produces("application/json")
     public Response getTest() {
         try{
-            Blackhole.downloadfile("9609F0336566953F3BF342241B25E2437F65B2C8", "/home/glenn/Downloads/aaa.torrent");
+            //Blackhole.downloadfile("9609F0336566953F3BF342241B25E2437F65B2C8", "/home/glenn/Downloads/aaa.torrent");
             //Btdigg.GrapMagnet("Game of Thrones S05E10 720p");
             //return Response.ok(Filemanager.linkmanualy(8).toString(), MediaType.APPLICATION_JSON).build();
             //return Response.ok(Filemanager.getAllFiles(8).toString(), MediaType.APPLICATION_JSON).build();

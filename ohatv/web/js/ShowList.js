@@ -32,8 +32,13 @@ function getShortShowList() {
     });
 }
 
-function getRequests(){
+function getRequests(status){
     var showRequestList = document.getElementById('showRequestList');
+    if(status == 0) {
+        document.getElementById('requestsheaders').innerHTML = '<th>#</th><th>Request</th>';
+    } else if(status == 1) {
+        document.getElementById('requestsheaders').innerHTML = '<th>#</th><th>Downloads</th>';
+    }
     showRequestList.innerHTML = '';
     $.ajax({
         dataType: "json",
@@ -41,7 +46,9 @@ function getRequests(){
         async: true,
         success: function(json){
             json.forEach(function(jsonrequest){
-                showRequestList.innerHTML = showRequestList.innerHTML + '<tr><td><button class="btn btn-danger" onclick="removerequest('+jsonrequest.ID+')"><i class=" fa fa-trash-o "></i> </button></td><td>'+jsonrequest.FILENAME +'</td></tr>';
+                if(jsonrequest.STATUS == status){
+                    showRequestList.innerHTML = showRequestList.innerHTML + '<tr><td><button class="btn btn-danger" onclick="removerequest('+jsonrequest.ID+')"><i class=" fa fa-trash-o "></i> </button></td><td>'+jsonrequest.FILENAME +'</td></tr>';
+                }
             });
         }
     });
@@ -176,6 +183,6 @@ function stopProcessTimer(){
 
 function docloaded() {
     getShortShowList();
-    getRequests();
+    getRequests(0);
     lastProcess();
 }

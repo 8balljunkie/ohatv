@@ -194,15 +194,15 @@
                     <div class="col-md-3">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Pending Downloads
+                            <button class="btn btn-info" onclick="getRequests(0);"><i class="fa fa-star"></i> Requests</button>
+                            <button class="btn btn-warning" onclick="getRequests(1);"><i class="fa fa-download"></i> Downloads</button>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Request</th>
+                                        <tr id="requestsheaders">
+                                            
                                         </tr>
                                     </thead>
                                     <tbody id="showRequestList">

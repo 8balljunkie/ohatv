@@ -729,7 +729,7 @@ public class DbFunctions {
         try{
             Class.forName("org.sqlite.JDBC");
             Connection connection = DriverManager.getConnection(conManager.getdburl());
-            String qry = "SELECT JSON, ID, FILESEARCH, FILENAME FROM REQUESTDOWNLOAD;";
+            String qry = "SELECT JSON, ID, FILESEARCH, FILENAME, STATUS FROM REQUESTDOWNLOAD;";
             JSONArray ja = new JSONArray();
             if(connection != null){
                 try{
@@ -742,6 +742,7 @@ public class DbFunctions {
                             json.put("ID", rs.getInt(2));
                             json.put("FILESEARCH", URLDecoder.decode(rs.getString(3), "UTF-8"));
                             json.put("FILENAME", URLDecoder.decode(rs.getString(4), "UTF-8"));
+                            json.put("STATUS", rs.getInt(5));
                             ja.put(json);
                         }
                         rs.close();
