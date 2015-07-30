@@ -256,6 +256,24 @@ public class OhaRest {
         return Response.serverError().entity("{\"status\":\"Error\"}").build();
     }
     
+    @Path("getsettings")
+    @GET
+    @Produces("application/json")
+    public Response getsettings() {
+        try{
+            if(conManager.isDatabaseSet()){
+                JSONObject json = DbFunctions.getBittorrentclient();
+                if(json != null){
+                    return Response.ok(json.toString(), MediaType.APPLICATION_JSON).build();
+                }
+                
+            }
+        } catch(Exception ex){
+            ex.printStackTrace();
+        }
+        return Response.serverError().entity("{\"status\":\"Error\"}").build();
+    }
+    
     @Path("updatebtclient")
     @POST
     @Produces("application/json")

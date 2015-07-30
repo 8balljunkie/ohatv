@@ -15,9 +15,41 @@ function savebtclient(){
 		data: dataobj,
 		contentType:"application/json",
 		success: function(){
+                    getSettings();
 		},
 		error: function(){
 		}
+	});
+}
+
+function getSettings(){
+    $.ajax({
+            type: "GET",
+            url: "webresources/api/getsettings",
+            contentType:"application/json",
+            success: function(data){
+                console.log(data);
+                if(data.btclient){
+                    document.getElementById('btclientselect').value = data.btclient;
+                }
+                if(data.bturl){
+                    document.getElementById('url').value = data.bturl;
+                }
+                if(data.btpath){
+                    document.getElementById('path').value = data.btpath;
+                }
+                if(data.btpath){
+                    document.getElementById('path').value = data.btpath;
+                }
+                if(data.MoveTo){
+                    document.getElementById('proToFolder').value = data.btpath;
+                }
+                if(data.btignorewords){
+                    document.getElementById('ignoredwords').value = data.btignorewords;
+                }
+            },
+            error: function(){
+            }
 	});
 }
 
@@ -27,4 +59,8 @@ function haschanged(element){
     } else {
         document.getElementById("url").disabled = false;
     }
+}
+
+function docloaded(){
+    getSettings();
 }

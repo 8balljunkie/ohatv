@@ -17,7 +17,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/tv2.png" />
 </head> 
-<body>
+<body onload="docloaded()">
     <script src="js/Settings.js"></script>
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
@@ -126,8 +126,8 @@
 									<div class="form-group">
 										<label for="disabledSelect">Client</label>
 										<select id="btclientselect" class="form-control" onchange="haschanged(this);">
-											<option>Transmission</option>
-                                                                                        <option>Blackhole</option>>
+											<option value="Transmission">Transmission</option>
+                                                                                        <option value="Blackhole">Blackhole</option>>
 											<!--<option>Deluge</option>
 											<option>qTorrent</option>
 											<option>µTorrent</option>-->

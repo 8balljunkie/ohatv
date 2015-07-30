@@ -1,3 +1,5 @@
+var currentstatus = 0;
+
 function getShortShowList() {
     $.ajax({
         dataType: "json",
@@ -33,6 +35,7 @@ function getShortShowList() {
 }
 
 function getRequests(status){
+    currentstatus = status;
     var showRequestList = document.getElementById('showRequestList');
     if(status == 0) {
         document.getElementById('requestsheaders').innerHTML = '<th>#</th><th>Request</th>';
@@ -62,7 +65,7 @@ function removerequest(id){
         url: "webresources/api/removeRequestDownload/"+id,
         async: true,
         success: function(json){
-            getRequests();
+            getRequests(currentstatus);
         }
     });
 }
