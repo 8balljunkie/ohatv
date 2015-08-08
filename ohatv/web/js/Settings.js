@@ -38,11 +38,8 @@ function getSettings(){
                 if(data.btpath){
                     document.getElementById('path').value = data.btpath;
                 }
-                if(data.btpath){
-                    document.getElementById('path').value = data.btpath;
-                }
                 if(data.MoveTo){
-                    document.getElementById('proToFolder').value = data.btpath;
+                    document.getElementById('proToFolder').value = data.MoveTo;
                 }
                 if(data.btignorewords){
                     document.getElementById('ignoredwords').value = data.btignorewords;
