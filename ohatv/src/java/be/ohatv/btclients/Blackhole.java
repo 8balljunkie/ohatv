@@ -37,6 +37,7 @@ public class Blackhole {
             while ((read = is.read(bytes)) != -1) {
                     outputStream.write(bytes, 0, read);
             }
+            outputStream.close();
         } catch(Exception ex){
             ex.printStackTrace();
         }

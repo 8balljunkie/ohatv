@@ -17,7 +17,7 @@ import org.codehaus.jettison.json.JSONObject;
 
 public class Filemanager {
     
-    private static final int pcsystem = 1; //1 for linux and mac, 2 for windows 
+    private static final int pcsystem = 2; //1 for linux and mac, 2 for windows 
     
     public static void getAllVideoFiles(){
         try{
